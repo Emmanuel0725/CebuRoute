@@ -3,7 +3,7 @@ import React from "react"
 export default function Card(props) {
     return (
         <div className="card--destination">
-            <div className="card--dest--image">
+            <div className="card--dest-image">
                 <img src={`../images/${props.img}`} className="card--image" />
             </div>
             <div className="card--text">
