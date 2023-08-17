@@ -77,8 +77,148 @@ body {
 }
 
 
+/*MODAL LOGIN and SignUp*/
+.modal--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/*LANDING PAGE- ROUTE*/
+.modal-login-sign-text {
+  margin: 0;
+  font-weight: 800;
+}
+
+.modal-login-sign-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.login-sign-link {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+}
+
+.login-sign-link a {
+  color: #184E77;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.button-login-sign{
+  height: 40px;
+  width: 100%;
+  background-color: #184E77;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.modal--login label,
+.modal--sign label {
+  margin-top: 15px;
+  font-size: 15px;
+  color: gray;
+}
+
+.modal--sign input,
+.modal--login input {
+  padding: 8px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/*MODAL LOGIN*/
+.modal--login {
+background-color: #FFFFFF;
+padding: 35px;
+border-radius: 8px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+width: 350px;
+position: relative;
+}
+.forgot-password {
+  margin: 5px 0 15px 0;
+  text-align: left;
+}
+.forgot-password a {
+  color: #184E77;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/*MODAL SIGN*/
+.modal--sign {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 420px;
+  position: relative;
+}
+.name-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.name-input {
+  width: 50%;
+}
+
+/*View Password*/
+.password-input {
+  position: relative;
+}
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+  max-width: 300px;  
+}
+
+input[type="password"] {
+  width: 100%;
+}
+input[type="text"] {
+  width: 100%;
+}
+
+.toggle-password-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.0em;
+  margin-left: -35px; 
+  z-index: 1;
+}
+
+
+/*LANDING PAGE- PLAN*/
 .hero {
     background-color: #D9ED92;
     height: auto;
@@ -141,7 +281,7 @@ body {
     justify-content: center; 
 }
 
-/*hero--see you itinerary*/
+/*LANDING PAGE- SEE*/
 .hero--map{
     display: flex;
     justify-content: space-between;
@@ -179,19 +319,18 @@ body {
     max-width: 100%;
 }
 
-/*hero--cards*/
+/*LANDING PAGE- DISCOVER*/
 .hero--destination{
+  display: relative;
     justify-content: center;
-    padding: 20px;
-    width: 85%;
-    margin: 120px 0 0 120px;
+    padding: 120px;
+    width: 100%;
+    object-fit: cover;
 }
-
 .card--destination {      
     border-radius: 10px;
     background-color: #F9F9F9;
     border-bottom: 15px solid #34A0A4;
-    
 }
 .hero--destination-title{
     font-size: 60px;
@@ -202,7 +341,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     overflow-x: auto;
-
 }
 .card--dest-image {
     width: 100%;
@@ -231,143 +369,242 @@ body {
     color:gray;
 }
 
-
-/*MODAL LOGIN and SignUp*/
-.modal--overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal-login-sign-text {
-    margin: 0;
-    font-weight: 800;
-  }
-  
-  .modal-login-sign-form {
-    display: flex;
-    flex-direction: column;
+/*FOR CELLPHONE*/
+@media screen and (max-width: 768px) {
+  .hero--destination {
+      padding: 50px; 
   }
 
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    background-color: white;
+  .hero--cards {
+      grid-template-columns: 1fr; 
+      overflow-x: hidden; 
   }
-
-  .login-sign-link {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 13px;
-    color: gray;
-  }
-  
-  .login-sign-link a {
-    color: #184E77;
-    text-decoration: none;
-    font-weight: 800;
-  }
-
-  .button-login-sign{
-    height: 40px;
-    width: 100%;
-    background-color: #184E77;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 25px;
-  }
-
-  .modal--login label,
-  .modal--sign label {
-    margin-top: 15px;
-    font-size: 15px;
-    color: gray;
 }
 
-  .modal--sign input,
-  .modal--login input {
-    padding: 8px;
-    height: 45px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px;
+/*FOR IPAD*/
+@media screen and (max-width: 880px) {
+  .hero--cards {
+      grid-template-columns: repeat(1, 1fr); 
+  }
 }
 
-/*MODAL LOGIN*/
-  .modal--login {
-  background-color: #FFFFFF;
-  padding: 35px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  width: 350px;
-  position: relative;
+@media screen and (min-width: 768px) and (max-width: 880px) {
+  .hero--cards {
+      grid-template-columns: repeat(2, 1fr);
   }
-  .forgot-password {
-    margin: 5px 0 15px 0;
-    text-align: left;
-  }
-  .forgot-password a {
-    color: #184E77;
-    font-size: 13px;
-    text-decoration: none;
-  }
+}
 
-/*MODAL SIGN*/
-  .modal--sign {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 420px;
-    position: relative;
-  }
-  .name-inputs {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-  }
-  .name-input {
-    width: 50%;
-  }
 
-/*View Password*/
-  .password-input {
-    position: relative;
-  }
-  
-  .password-input-container {
-    display: flex;
-    align-items: center;
-    max-width: 300px;  
-  }
-  
-  input[type="password"] {
-    width: 100%;
-  }
-  input[type="text"] {
-    width: 100%;
-  }
-  
-  .toggle-password-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.0em;
-    margin-left: -35px; 
-    z-index: 1;
-  }
+  /* DETAIL PAGES */
+
+  /*DETAIL PAGE - TITLE */
+.detail--pages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 70px 120px 120px 120px;
+}
+.detail--title {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0 0 12px 0;
+}
+.detail--address-time{
+  align-items: center;
+  font-size: 20px;
+  margin: 0;
+  color: gray;
+}
+.detail--address-time > p { 
+  margin: 0;
+}
+.icon {
+  width: 12px; 
+  height: 12px; 
+  margin-right: 8px;
+}
+.rating-stars {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.star {
+  margin-right: 4px;
+}
+.detail--review-category {
+  display: relative;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+  /*DETAIL PAGE - ABOUT & PICTURE */
+.detail--sections {
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem 0 5rem 0;
+  align-items: flex-start; 
+}
+
+.detail--about {
+  text-align: justify;
+  text-justify: auto;
+  border: 2px solid #E7E7E7;
+  width: 40%;
+  padding: 20px; 
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.detail--about > h1,
+.detail--about > p {
+  margin: 25px; 
+}
+
+/*Pictures of Destination*/
+.detail--pictures {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-images {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.image-main {
+  border-radius: 10px;
+  height: 700px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+/*Mini Picture of Destination*/
+.thumbnail-row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 1rem;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #E7E7E7;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.thumbnail:hover {
+  border-color: #3498db;
+}
+
+/*DETAIL PAGE - REVIEW SECTION*/
+.detail--review {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0 5rem;
+  width: 100%;
+  height: 600px;
+}
+
+/* REVIEW WITH STARS */
+.review--stars {
+  justify-content: center;
+  width: 600px;
+  height: auto;
+  margin: 10px;
+  padding: 25px;
+}
+
+.star--rating > span {
+  font-size: 20px;
+  text-align: center;
+}
+
+.progress--bar {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+/* REVIEW WRITE */
+.review--write {
+  padding: 20px; 
+  width: 100%;
+  height: 160px;
+  margin: 0 120px 0 120px;
+}
+
+/* USER INFO */
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user--logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.user--details {
+  display: flex;
+  align-items: center; 
+}
+
+.user--username {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ADD REVIEW BUTTON */
+.add--review {
+  background-color: white;
+  border: 3px solid #184E77;
+  font-size: 20px;
+  color: #184E77;
+  padding: 15px;
+  margin: 20px;
+  text-align: center;
+  justify-content: center;
+  margin: 10px 0 50px 65px;
+}
+
+
+/*USER WRITE A REVIEW */
+.review--row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+.user--logo-and-name,
+.star--rating-and-date {
+  display: flex;
+  align-items: center; 
+}
+.date--posted {
+  font-size: 20px;
+  color: #333333;
+  margin-left: 10px;
+}
+.user--review {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  text-justify: auto;
+  margin-bottom: 30px;
+}
+
+
+
