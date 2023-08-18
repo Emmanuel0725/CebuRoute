@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+/*COMPONENTS*/
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
-import data from '../data';
-import Login from '../pages/Login'; 
+/*DATA*/
+import cardData from '../cardData';
+/*PAGES*/
+import Login from '../pages/Login.jsx';
+import Sign from '../pages/Sign.jsx';
 
 export default function LandingPage() {
   const [showLoginModal, setShowLoginModal] = useState(false); 
   const openLoginModal = () => { setShowLoginModal(true); };
   const closeLoginModal = () => { setShowLoginModal(false); };
 
-  const cards = data.map(item => (
+  const cards = cardData.map(item => (
     <Card key={item.id} {...item} />
   ));
 

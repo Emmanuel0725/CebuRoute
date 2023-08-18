@@ -1,32 +1,105 @@
-import React from "react";
-import Navbar from '../components/Navbar';
+import React, { useState } from "react";
+/*COMPONENTS*/
+import UserNav from '../components/UserNav';
 import Footer from '../components/Footer';
-import DetailsComp from '../components/DetailsComp';
-import detailsData from '../detailsData';
 import Review from '../components/Review';
-import reviewData from '../reviewData';
+/*DATA*/
+import detailsData from "../detailsData";
+import reviewData from "../reviewData";
+/*ICON*/
+import addressIcon from "/images/maps-and-flags.png";
+import timeIcon from "/images/clock.png";
+import userIcon from "/images/user.png"
 
 export default function DetailPage() {
-    const details = detailsData.map(item => (
-        <DetailsComp key={item.id} {...item} />
-    ));
+    const details = detailsData[0];
+    const [currentImage, setCurrentImage] = useState(details.images[0]);
+
+    const handleThumbnailClick = (image) => {
+        setCurrentImage(image);
+    };
 
     const reviews = reviewData.map(item => (
-        <div key={item.id}>
-             <Review username={item.username} date={item.date} review={item.review} />
-        </div>
+        <Review key={item.id} {...item} />
     ));
 
+
     return (
-        <div>
-            <Navbar />
-            <div className='detail--page'>
-                {details}
-            </div>
-            <div className="reviews-container">
-                {reviews}
-            </div>
+        <div className='detailPage'>
+            <UserNav />
+                    <div className="detailPage--text">
+                        <h1 className="detailPage--title">{details.title}</h1>
+                        <div className="detailPage--address-time"> 
+                            <p> <img className="detailPage--icon" src={addressIcon}  />
+                                {details.address}
+                            </p>
+                            <p> <img className="detailPage--icon" src={timeIcon}  />
+                                {details.time}
+                            </p> 
+                        </div>
+                        <div className="detailPage--rating-stars">
+                            {[1, 2, 3, 4, 5].map((index) => (
+                                <span key={index} className="detailPage--star">⭐</span>
+                            ))}
+                            <div className="detailPage--rating-category">
+                                <span> • {details.rating}</span>
+                                <span> • {details.categories} </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="detailPage--sections">
+                        <div className="detailPage--about">
+                            <h1 className="detailPage--title1">About</h1>
+                            <p>{details.about}</p>
+                        </div>
+                        <div className="detailPage--pictures">
+                            <div className="detailPage--images">
+                                <img className='detailPage--main-image' src={currentImage} alt="Main" />
+                                <div className="detailPage--thumbnail">
+                                    {details.images.map((image, index) => (
+                                        <img
+                                            key={index}
+                                            className="thumbnail"
+                                            src={image}
+                                            alt={`Thumbnail ${index + 1}`}
+                                            onClick={() => handleThumbnailClick(image)}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='detailPage--review'>
+                        <div className="detailPage--review-stars">
+                            <h1>Reviews</h1>
+                            <div className="detailPage--star">
+                                {[1, 2, 3, 4, 5].map((index) => (
+                                <span key={index} className="star">⭐</span> ))}
+                                <span> • {details.rating}</span>
+                                <span> • {details.reviewCount} </span>
+                            </div>
+                            <div className="progress--bars">
+                                {[1, 2, 3, 4, 5].map((index) => (
+                                <div key={index} className="progress--bar">
+                                {6 - index}
+                                </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="review--write">
+                            <div className="user--logo-and-name">
+                                <img className="user--logo" src={userIcon}  />
+                                <span className='user--username'>Elaine Suganob</span>
+                            </div>
+                            <div>
+                                <button className='add--review'>Add a Review</button>
+                            </div>
+                        </div>    
+                    </div>
+                        <div className="user--review"> 
+                            {reviews}
+                        </div>
             <Footer />
         </div>
     )
-}
+}   

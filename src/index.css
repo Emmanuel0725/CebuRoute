@@ -7,39 +7,111 @@ body {
     font-family: 'Work Sans', sans-serif;
    
 }
-/*NavBar*/
-.navbar {
-    display: flex;
-    background-color: #D9ED92;
-    justify-content: space-between;
-    padding: 10px 10px;
-    align-items: center;
-}
-.navbar > img {
-    margin: 0 50px;
-    height: 60px;
-}
-.link {
-    display: flex;
-    margin: 0 50px;
-    color: #184E77;
-    text-align: center;
-    margin-left: auto;
-}
-.link--button {
-    margin-right: 20px;
-    padding: 0;
-    font-size: 10px;
-    background-color: #D9ED92;
-    color: inherit;
-	border: none;
-	cursor: pointer;
+
+.logout-popup {
+  position: absolute;
+  top: calc(100% + -15px); /* Position below the user icon */
+  right: 30px;
+  z-index: 10;
 }
 
-.link--button :hover {
-    border-bottom: 5px solid white;
-    padding: 2px;
-    transition: 0.2s;
+.logout-popup > button {
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  width: auto;
+  height: 30px;
+  background-color: #184E77;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+
+/* USER NAVBAR*/
+.user--navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  background-color: #FFFFFF;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+.search--bar-container {
+  display: flex;
+  align-items: center;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 5px;
+  width: 600px;
+  margin: 0 auto; 
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.search--bar {
+  border: none;
+  border-radius: 5px;
+  background-color: #F7F7F7;
+  padding: 10px;
+  flex: 1; 
+}
+
+.user--logo-nav {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  margin-left: 50px;
+}
+
+/*NAVBAR*/
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  background-color: #D9ED92;
+  justify-content: space-between;
+  padding: 10px 10px;
+  align-items: center;
+  width: 100%;
+  z-index: 1000; 
+}
+
+.cebu--route {
+  margin: 0 50px;
+  max-height: 60px;
+}
+
+.link {
+  display: flex;
+  margin: 0 50px;
+  color: #184E77;
+  text-align: center;
+  margin-left: auto;
+}
+
+.link--button {
+  margin-right: 20px;
+  padding: 0;
+  font-size: 10px;
+  background-color: #D9ED92;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.link--button:hover {
+  border-bottom: 5px solid white;
+  padding: 2px;
+  transition: 0.2s;
 }
 
 
@@ -186,8 +258,12 @@ position: relative;
   justify-content: space-between;
   margin-top: 15px;
 }
-.name-input {
+.name-firstName {
   width: 50%;
+}
+.name-lastName {
+  width: 50%;
+  margin-left: 25px;
 }
 
 /*View Password*/
@@ -227,6 +303,8 @@ input[type="text"] {
     align-items: center;
     border-radius: 0 0 40px 40px;
     padding: 20px;
+    margin-top: 3rem;
+   
 }
 
 .hero--route {
@@ -247,7 +325,7 @@ input[type="text"] {
     width: 100%;
     color: #333333;
     text-align: center;
-    margin: 0 0 0 120px;
+    margin: 50px 0 0 120px;
 }
 
 .title--h1 {
@@ -397,42 +475,42 @@ input[type="text"] {
 
   /* DETAIL PAGES */
 
-  /*DETAIL PAGE - TITLE */
-.detail--pages {
+  /*DETAIL PAGE TITLE & ADDRESS & TIME  */
+.detailPages {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 70px 120px 120px 120px;
 }
-.detail--title {
+.detailPage--text {
+  margin: 10rem 120px 0 120px;
+}
+.detailPage--title {
   font-size: 35px;
   font-weight: 900;
   margin: 0 0 12px 0;
 }
-.detail--address-time{
+.detailPage--address-time{
   align-items: center;
   font-size: 20px;
-  margin: 0;
   color: gray;
 }
-.detail--address-time > p { 
+.detailPage--address-time > p { 
   margin: 0;
 }
-.icon {
+.detailPage--icon {
   width: 12px; 
   height: 12px; 
   margin-right: 8px;
 }
-.rating-stars {
+.detailPage--rating-stars {
   display: flex;
   align-items: center;
   font-size: 20px;
   margin-bottom: 8px;
 }
-.star {
-  margin-right: 4px;
+.detailPage--star {
+  font-size: 20px;
 }
-.detail--review-category {
+.detailPage--rating-category {
   display: relative;
   font-size: 20px;
   margin-top: 10px;
@@ -440,14 +518,14 @@ input[type="text"] {
 
 
   /*DETAIL PAGE - ABOUT & PICTURE */
-.detail--sections {
+.detailPage--sections {
   display: flex;
   justify-content: space-between;
-  margin: 5rem 0 5rem 0;
   align-items: flex-start; 
+  margin: 70px 120px 0 120px;
 }
 
-.detail--about {
+.detailPage--about {
   text-align: justify;
   text-justify: auto;
   border: 2px solid #E7E7E7;
@@ -457,27 +535,27 @@ input[type="text"] {
   font-size: 25px;
 }
 
-.detail--about > h1,
-.detail--about > p {
+.detailPage--about > h1,
+.detailPage--about > p {
   margin: 25px; 
 }
 
-/*Pictures of Destination*/
-.detail--pictures {
+/*PICTURES OF DESTINATION*/
+.detailPage--pictures {
   flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.details-images {
+.detailPage--images {
   object-fit: cover;
   object-position: center;
   width: 100%;
   margin-left: 50px;
 }
 
-.image-main {
+.detailPage--main-image {
   border-radius: 10px;
   height: 700px;
   object-fit: cover;
@@ -485,8 +563,8 @@ input[type="text"] {
   width: 100%;
 }
 
-/*Mini Picture of Destination*/
-.thumbnail-row {
+/*MINI PICTURES*/
+.detailsPic--thumbnail {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -509,26 +587,17 @@ input[type="text"] {
 }
 
 /*DETAIL PAGE - REVIEW SECTION*/
-.detail--review {
+.detailPage--review {
   display: flex;
-  justify-content: space-between;
-  margin: 0 0 0 5rem;
-  width: 100%;
-  height: 600px;
-}
-
-/* REVIEW WITH STARS */
-.review--stars {
-  justify-content: center;
-  width: 600px;
+  margin: 70px 120px 0 120px;
   height: auto;
-  margin: 10px;
-  padding: 25px;
 }
 
-.star--rating > span {
-  font-size: 20px;
-  text-align: center;
+/* REVIEW WITH STARS and PROGRESS BAR */
+.detailPage--review-stars {
+  justify-content: center;
+  width: 30%;
+  height: auto;
 }
 
 .progress--bar {
@@ -536,34 +605,11 @@ input[type="text"] {
   font-size: 20px;
 }
 
-/* REVIEW WRITE */
+/* USER AND ADD REVIEW BUTTON*/
 .review--write {
-  padding: 20px; 
-  width: 100%;
-  height: 160px;
-  margin: 0 120px 0 120px;
-}
-
-/* USER INFO */
-.user {
-  display: flex;
-  align-items: center;
-}
-
-.user--logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
-}
-
-.user--details {
-  display: flex;
-  align-items: center; 
-}
-
-.user--username {
-  font-size: 20px;
-  font-weight: 600;
+  padding: 5px; 
+  margin-top: 90px;
+  margin-left: 125px;
 }
 
 /* ADD REVIEW BUTTON */
@@ -573,19 +619,47 @@ input[type="text"] {
   font-size: 20px;
   color: #184E77;
   padding: 15px;
-  margin: 20px;
   text-align: center;
   justify-content: center;
-  margin: 10px 0 50px 65px;
+  margin: 10px 0 0 65px;
+}
+
+/*USER LOGO AND USER NAME*/
+.user--details {
+  display: flex;
+  align-items: center; 
+}
+/* USER LOGO */
+.user--logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+.user--username {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 
-/*USER WRITE A REVIEW */
+/*USER REVIEW ABOUT SPOT*/
+.user--review {
+  max-width: 55%;
+  margin-left: auto;
+  margin-right: 120px;
+  margin-bottom: 100px;
+}
+.user--review > p{
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  text-justify: auto;
+  margin-bottom: 30px;
+}
 .review--row {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 30px;
 }
 .user--logo-and-name,
 .star--rating-and-date {
@@ -597,14 +671,8 @@ input[type="text"] {
   color: #333333;
   margin-left: 10px;
 }
-.user--review {
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
-  text-align: justify;
-  text-justify: auto;
-  margin-bottom: 30px;
-}
+
+
 
 
 

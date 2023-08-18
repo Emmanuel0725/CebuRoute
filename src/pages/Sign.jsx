@@ -14,11 +14,11 @@ export default function Sign({ onClose }) {
         <h2 className='modal-login-sign-text'>Sign Up</h2>
         <form className='modal-login-sign-form'>
           <div className="name-inputs">
-            <div className="name-input">
+            <div className="name-firstName">
               <label>First Name:</label>
               <input type="text" placeholder="Enter your first name" />
             </div>
-            <div className="name-input">
+            <div className="name-lastName">
               <label>Last Name:</label>
               <input type="text" placeholder="Enter your last name" />
             </div>

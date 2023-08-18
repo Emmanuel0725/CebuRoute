@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+/*PAGES*/
 import Login from '../pages/Login.jsx';
 import Sign from '../pages/Sign.jsx';
 
@@ -9,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav className='navbar'>
-      <img src="../images/Untitled design.png" />
+      <img className="cebu--route" src="../images/Untitled design.png" />
       <div className='link'>
         <button className='link--button' onClick={() => setShowLoginModal(true)}>
           <h1 className='login--text'>LOGIN</h1>
