@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import UserNav from '../components/UserNav';
 import Footer from '../components/Footer';
 import Review from '../components/Review';
+import AddReview from '../components/AddReview';
 /*DATA*/
 import detailsData from "../detailsData";
 import reviewData from "../reviewData";
@@ -12,17 +13,29 @@ import timeIcon from "/images/clock.png";
 import userIcon from "/images/user.png"
 
 export default function DetailPage() {
-    const details = detailsData[0];
-    const [currentImage, setCurrentImage] = useState(details.images[0]);
 
+    /*DATA FOR DETAIL DATA*/
+    const details = detailsData[0];
+
+    /*THUMBNAIL*/
+    const [currentImage, setCurrentImage] = useState(details.images[0]);
     const handleThumbnailClick = (image) => {
         setCurrentImage(image);
     };
 
+    /*DATA FOR REVIEW*/
     const reviews = reviewData.map(item => (
         <Review key={item.id} {...item} />
     ));
 
+    /*MOODAL FOR ADD REVIEW*/
+    const [isModalOpen, setModalOpen] = useState(false);
+    const openModal = () => {
+        setModalOpen(true);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
         <div className='detailPage'>
@@ -89,17 +102,18 @@ export default function DetailPage() {
                         <div className="review--write">
                             <div className="user--logo-and-name">
                                 <img className="user--logo" src={userIcon}  />
-                                <span className='user--username'>Elaine Suganob</span>
+                                <span className='user--username'>Elaine Suganob</span> {/* PUT THERE THE USERNAME OF (THE ID OF THE USER)*/}
                             </div>
                             <div>
-                                <button className='add--review'>Add a Review</button>
+                                <button className='add--review' onClick={openModal}>Add a Review</button>
                             </div>
                         </div>    
                     </div>
-                        <div className="user--review"> 
-                            {reviews}
-                        </div>
+                    <div className="user--review"> 
+                        {reviews}
+                    </div>
             <Footer />
+            <AddReview isOpen={isModalOpen} onClose={closeModal} /> 
         </div>
     )
 }   

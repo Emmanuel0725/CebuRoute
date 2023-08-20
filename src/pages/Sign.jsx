@@ -9,7 +9,7 @@ export default function Sign({ onClose }) {
 
   return (
     <div className="modal--overlay">
-      <div className="modal--sign">
+      <div className="modal--login">
       <button className="close-button" onClick={onClose}>X</button>
         <h2 className='modal-login-sign-text'>Sign Up</h2>
         <form className='modal-login-sign-form'>

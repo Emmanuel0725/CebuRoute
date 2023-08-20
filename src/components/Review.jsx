@@ -1,4 +1,5 @@
 import React from "react"
+/*ICON*/
 import userIcon from "/images/user.png"
 
 export default function Review (props) {

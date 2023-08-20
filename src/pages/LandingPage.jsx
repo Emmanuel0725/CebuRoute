@@ -7,7 +7,6 @@ import Card from '../components/Card';
 import cardData from '../cardData';
 /*PAGES*/
 import Login from '../pages/Login.jsx';
-import Sign from '../pages/Sign.jsx';
 
 export default function LandingPage() {
   const [showLoginModal, setShowLoginModal] = useState(false); 

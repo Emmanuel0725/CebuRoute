@@ -26,7 +26,7 @@ export default function UserNav() {
         <img
           src={userIcon} 
           alt="User Icon"
-          className='user--logo-nav'
+          className='user--logo'
           onClick={toggleLogoutPopup}
         />
         {logoutPopupVisible && (

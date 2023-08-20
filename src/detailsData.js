@@ -12,4 +12,5 @@ export default [
         about: "Magellan's Cross is a historical landmark located in Cebu City, Philippines. It commemorates the arrival of Christianity in the archipelago during the 16th century. The cross stands at the exact spot where Portuguese explorer Ferdinand Magellan planted the Christian cross upon arriving in Cebu in 1521. This event marked a crucial moment in the country's history, as it symbolized the beginning of the spread of Christianity in the Philippines. Today, the site has become a popular pilgrimage destination and a must-visit historical attraction, drawing visitors from all around the world to witness this iconic symbol of faith and cultural heritage.",  
     },
     
+    
 ]
